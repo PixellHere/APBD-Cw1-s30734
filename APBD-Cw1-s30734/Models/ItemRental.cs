@@ -26,6 +26,8 @@ public class ItemRental
         { 7, 18.99 }
     };
 
+    public static List<ItemRental> RentedItems = new List<ItemRental>();
+
     User _renter;
     Item _item;
     DateTime _startDate;
@@ -43,40 +45,6 @@ public class ItemRental
         _isReturned = false;
         _rentCost = (endDate - startDate).TotalDays;
         _delayCost = 0;
-    }
-
-    public void Return()
-    {
-        _isReturned = true;
-
-        if (_endDate < DateTime.Now)
-        {
-            _delayCost = CalculateDelayCost(DateTime.Now.Subtract(_endDate).Days);
-            
-        }
-        else
-        {
-            _rentCost = 0;
-            _endDate = DateTime.Now;
-        }
-    }
-
-    private double CalculateDelayCost(int delay)
-    {
-        int delayWeeks = delay / 7;
-        int delayDays = delay % 7;
-        double delayCost;
-        
-        if (delayWeeks > 0)
-        {
-            delayCost = delayWeeks * DelayCosts[7] +  (delayDays > 0 ? DelayCosts[delayDays] : 0);
-        }
-        else
-        {
-            delayCost = delayDays > 0 ? DelayCosts[delayDays] : 0;
-        }
-        
-        return delayCost;
     }
 
     public static Dictionary<int, double> RentCosts1

@@ -8,6 +8,8 @@ public class Servicing
     DateTime _expectedEndDate;
     String _faultDescription;
 
+    public static List<Servicing> ItemsInService = new List<Servicing>();
+
     public Servicing(Item item, User fixer, DateTime startDate, DateTime expectedEndDate, string faultDescription)
     {
         _item = item;

@@ -8,6 +8,8 @@ public abstract class Item
     string _description;
     string _whyNotAvailable;
 
+    public static List<Item> AvailableItems = new List<Item>();
+
     public Item(string name, bool isAvailable, int yearOfManufacture, string description, string whyNotAvailable)
     {
         _uuid = Guid.NewGuid().ToString();
