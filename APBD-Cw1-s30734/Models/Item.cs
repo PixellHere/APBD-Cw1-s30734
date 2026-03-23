@@ -1,5 +1,4 @@
-﻿namespace APBD_Cw1_s30734;
-
+﻿namespace APBD_Cw1_s30734.Models;
 public abstract class Item
 {
     string _uuid;

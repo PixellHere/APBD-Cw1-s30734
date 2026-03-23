@@ -1,11 +1,11 @@
-﻿namespace APBD_Cw1_s30734;
+﻿namespace APBD_Cw1_s30734.Models;
 
 public class Employee : User
 {
     string _role;
     int _salary;
 
-    public Employee(string firstName, string lastName, string role, int salary) : base(firstName, lastName, APBD_Cw1_s30734.UserType.Employee)
+    public Employee(string firstName, string lastName, string role, int salary) : base(firstName, lastName, APBD_Cw1_s30734.Models.UserType.Employee)
     {
         _role = role;
         _salary = salary;
