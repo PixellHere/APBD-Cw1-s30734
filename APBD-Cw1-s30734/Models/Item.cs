@@ -1,14 +1,14 @@
 ﻿namespace APBD_Cw1_s30734.Models;
 public abstract class Item
 {
+    public static List<Item> AvailableItems = new List<Item>();
+    
     string _uuid;
     string _name;
     bool _isAvailable;
     int _yearOfManufacture;
     string _description;
     string _whyNotAvailable;
-
-    public static List<Item> AvailableItems = new List<Item>();
 
     public Item(string name, bool isAvailable, int yearOfManufacture, string description, string whyNotAvailable)
     {
