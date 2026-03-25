@@ -2,6 +2,8 @@
 
 public abstract class User
 {
+    public static List<User> Users = new List<User>();
+    
     string _uuid;
     string _firstName;
     string _lastName;

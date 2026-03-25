@@ -2,6 +2,8 @@
 
 public class Employee : User
 {
+    public static int MaxActiveRentals = 5;
+    
     string _role;
     int _salary;
 
