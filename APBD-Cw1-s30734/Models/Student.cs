@@ -2,6 +2,8 @@
 
 public class Student : User
 {
+    public static int MaxActiveRentals = 2;
+    
     int _semester;
     string _major;
 
