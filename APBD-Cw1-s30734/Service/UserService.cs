@@ -18,6 +18,11 @@ public class UserService
 
     public void DeleteUser(string uuid)
     {
-        User.Users.RemoveAt(User.Users.FindIndex(x => x.Uuid == uuid));
+        int index = User.Users.FindIndex(u => u.Uuid == uuid);
+
+        if (index != -1)
+        {
+            User.Users.RemoveAt(index);
+        }
     }
 }
