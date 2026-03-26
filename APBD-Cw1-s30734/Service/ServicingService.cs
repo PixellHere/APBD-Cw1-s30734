@@ -9,9 +9,12 @@ public class ServicingService
     {
     }
 
-    public void SendItemToService(Item item, User fixer, DateTime startDate,
+    public void SendItemToService(string itemUuid, User fixer, DateTime startDate,
         DateTime expectedEndDate, string faultDescription)
     {
+        Item item = Item.AvailableItems.Find(i => i.Uuid == itemUuid)
+                    ?? throw new ArgumentNullException("Could not find item in item list");
+        
         if (item.IsAvailable)
         {
             Servicing service = new Servicing(item, fixer, startDate, expectedEndDate, faultDescription);

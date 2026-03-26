@@ -39,10 +39,9 @@ public class ItemRentalService
     
     public void ReturnItem(string itemUuid)
     {
-        Item item = Item.AvailableItems.Find(item => item.Uuid == itemUuid) 
-                          ?? throw new ArgumentNullException("Could not find item uuid") ;
+        Item item = Item.AvailableItems.Find(item => item.Uuid.Equals(itemUuid));
 
-        if (item.IsAvailable)
+        if (item != null)
         {
             throw new ArgumentException("Item is not rented");
         }

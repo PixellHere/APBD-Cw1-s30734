@@ -67,7 +67,7 @@ public class ItemService
         Item searchedItem;
         
         searchedItem = Item.AvailableItems.Find(i => i.Uuid == uuid) 
-                       ?? throw new ArgumentNullException("Could not find item in item list") ;
+                        ?? throw new ArgumentNullException("Could not find item in item list");
         
         return searchedItem;
     }
